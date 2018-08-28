@@ -1,0 +1,40 @@
+ 1 //Hannah Van Wyk
+ 2 //5.29.2018
+ 3 //CSE 142
+ 4 //TA: Chin Yeoh
+ 5 //Assignment #8
+ 6 //This class creates the vulture object
+ 7 
+ 8 import java.awt.*;
+ 9 
+10 //extends bird because the toString method is the same
+11 public class Vulture extends Bird {
+12    private boolean hungry;
+13    
+14    //sets default hunger to true
+15    public Vulture () {
+16       this.hungry = true;
+17    }
+18 
+19    //returns color as black
+20    public Color getColor() {
+21       return Color.BLACK;
+22    }
+23    
+24    //if hungry, returns true if not, returns false
+25    //if it is hungry, hunger becomes false after eating
+26    public boolean eat() {
+27       if(hungry) {
+28          this.hungry = false;
+29          return true;
+30       } else {
+31          return false;
+32       }
+33    }
+34    
+35    //extends Attack superclass but also adds making it hungry
+36    public Attack fight(String opponent) {
+37       this.hungry = true;
+38       return super.fight(opponent);
+39    }
+40 }
